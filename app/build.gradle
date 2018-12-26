@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "27.0.1"
+
+    defaultConfig {
+        applicationId "com.tencent.squeezencnn"
+
+//        ndk {
+//            moduleName "ncnn"
+//        }
+
+        ndk {
+            moduleName "ncnn"
+            abiFilters 'armeabi-v7a', "armeabi"
+            ldLibs "log"
+            ldLibs "jnigraphics"//新增
+        }
+
+        externalNativeBuild {
+            cmake {
+                abiFilters "armeabi-v7a", 'arm64-v8a', 'x86', 'x86_64'
+                arguments '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=c++_static', "-DANDROID_ARM_NEON=TRUE"
+//                arguments
+                cppFlags "-std=c++11 -frtti -fexceptions"
+            }
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+//    sourceSets.main{
+//        jniLibs.srcDir 'src/main/libs'
+//        jni.srcDirs = []
+//    }
+
+//    task ndkBuild(type: Exec) {
+//        if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+//            commandLine 'ndk-build.cmd', '-C', file('src/main/jni').absolutePath
+//        } else {
+//            commandLine '/Users/wurongqiu/Android/AndroidSDK/ndk-bundle/ndk-build', '-C', file('src/main/jni').absolutePath
+//        }
+//    }
+
+//    task ndkBuild(type:Exec,description:'Compile JNI source via NDK'){
+//        commandLine "/Users/wurongqiu/Android/AndroidSDK/ndk-bundle/ndk-build",//配置ndk的路径
+//                'NDK_PROJECT_PATH=build/intermediates/ndk',//ndk默认的生成so的文件
+//                'NDK_LIBS_OUT=src/main/jniLibs',//配置的我们想要生成的so文件所在的位置
+//                'APP_BUILD_SCRIPT=src/main/jni/Android.mk',//指定项目以这个mk的方式
+//                'NDK_APPLOCATION_MK=src/main/jni/Application.mk'//指定项目以这个mk的方式
+//    }
+
+//    tasks.withType(JavaCompile) {
+//        compileTask -> compileTask.dependsOn ndkBuild
+//    }
+
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+//            path "src/main/ncnn/CMakeLists.txt"
+        }
+    }
+}
