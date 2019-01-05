@@ -18,14 +18,18 @@ set(SRC_NCNN_DIR src/main/ncnn)
 #set(NCNN_LAYER_DIR src/main/cpp/ncnn/layer)
 
 add_library( # Sets the name of the library.
-             squeezencnn
+             #squeezencnn
+             MobileNetssd
 
              # Sets the library as a shared library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             ${SRC_DIR}/squeezencnn_jni.cpp
-             ${SRC_DIR}/squeezenet_v1.1.id.h
+        #     ${SRC_DIR}/squeezencnn_jni.cpp
+         #    ${SRC_DIR}/squeezenet_v1.1.id.h
+
+             ${SRC_DIR}/MobileNetssd.cpp
+             ${SRC_DIR}/MobileNetSSD_deploy.id.h
              #${SRC_NCNN_DIR}/net.h
              ${SRC_NCNN_DIR}/platform.h.in
              ${SRC_NCNN_DIR}/Makefile
@@ -285,7 +289,9 @@ find_library( # Sets the name of the path variable.
                        # included in the NDK.
 #                       ${log-lib} )
 
-target_link_libraries( squeezencnn
+target_link_libraries( #squeezencnn
                        #加入该依赖库
+                        MobileNetssd   #和上面一样
+                           #    ncnn_lib       #这个ncnn的lib的add
                        jnigraphics
                        ${log-lib} )

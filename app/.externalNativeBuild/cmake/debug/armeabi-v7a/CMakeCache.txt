@@ -27,7 +27,7 @@ ANDROID_ARM_NEON:UNINITIALIZED=TRUE
 ANDROID_NDK:UNINITIALIZED=/Users/wurongqiu/Android/AndroidSDK/ndk-bundle
 
 //No help, variable specified on the command line.
-ANDROID_PLATFORM:UNINITIALIZED=android-14
+ANDROID_PLATFORM:UNINITIALIZED=android-19
 
 //No help, variable specified on the command line.
 ANDROID_STL:UNINITIALIZED=c++_static
@@ -198,6 +198,9 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=/Users/wurongqiu/Android/AndroidSDK/ndk-bundle/bui
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Dependencies for the target
+MobileNetssd_LIB_DEPENDS:STATIC=general;jnigraphics;general;/Users/wurongqiu/Android/AndroidSDK/ndk-bundle/platforms/android-19/arch-arm/usr/lib/liblog.so;
+
 //Value Computed by CMake
 Project_BINARY_DIR:STATIC=/Users/wurongqiu/Android/testmis/ncnn-as/app/.externalNativeBuild/cmake/debug/armeabi-v7a
 
@@ -205,10 +208,7 @@ Project_BINARY_DIR:STATIC=/Users/wurongqiu/Android/testmis/ncnn-as/app/.external
 Project_SOURCE_DIR:STATIC=/Users/wurongqiu/Android/testmis/ncnn-as/app
 
 //Path to a library.
-log-lib:FILEPATH=/Users/wurongqiu/Android/AndroidSDK/ndk-bundle/platforms/android-14/arch-arm/usr/lib/liblog.so
-
-//Dependencies for the target
-squeezencnn_LIB_DEPENDS:STATIC=general;jnigraphics;general;/Users/wurongqiu/Android/AndroidSDK/ndk-bundle/platforms/android-14/arch-arm/usr/lib/liblog.so;
+log-lib:FILEPATH=/Users/wurongqiu/Android/AndroidSDK/ndk-bundle/platforms/android-19/arch-arm/usr/lib/liblog.so
 
 
 ########################

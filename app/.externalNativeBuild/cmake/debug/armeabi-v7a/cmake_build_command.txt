@@ -3,7 +3,7 @@ arguments :
 -H/Users/wurongqiu/Android/testmis/ncnn-as/app
 -B/Users/wurongqiu/Android/testmis/ncnn-as/app/.externalNativeBuild/cmake/debug/armeabi-v7a
 -DANDROID_ABI=armeabi-v7a
--DANDROID_PLATFORM=android-14
+-DANDROID_PLATFORM=android-19
 -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/wurongqiu/Android/testmis/ncnn-as/app/build/intermediates/cmake/debug/obj/armeabi-v7a
 -DCMAKE_BUILD_TYPE=Debug
 -DANDROID_NDK=/Users/wurongqiu/Android/AndroidSDK/ndk-bundle
