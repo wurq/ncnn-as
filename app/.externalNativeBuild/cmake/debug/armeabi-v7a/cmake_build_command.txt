@@ -14,5 +14,6 @@ arguments :
 -DANDROID_TOOLCHAIN=clang
 -DANDROID_STL=c++_static
 -DANDROID_ARM_NEON=TRUE
+-DANDROID_ARM_MODE=arm
 jvmArgs : 
 
