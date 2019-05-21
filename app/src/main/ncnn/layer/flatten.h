@@ -15,8 +15,7 @@
 #ifndef LAYER_FLATTEN_H
 #define LAYER_FLATTEN_H
 
-//#include "../layer.h"
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 
@@ -26,6 +25,19 @@ public:
     Flatten();
 
     virtual int forward(const Mat& bottom_blob, Mat& top_blob, const Option& opt) const;
+
+#if NCNN_VULKAN
+    virtual int create_pipeline();
+    virtual int destroy_pipeline();
+
+    virtual int forward(const VkMat& bottom_blob, VkMat& top_blob, VkCompute& cmd, const Option& opt) const;
+#endif // NCNN_VULKAN
+
+public:
+#if NCNN_VULKAN
+    Pipeline* pipeline_flatten;
+    Pipeline* pipeline_flatten_pack4;
+#endif // NCNN_VULKAN
 };
 
 } // namespace ncnn

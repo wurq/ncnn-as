@@ -15,7 +15,7 @@
 #ifndef LAYER_SPP_H
 #define LAYER_SPP_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

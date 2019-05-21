@@ -15,7 +15,7 @@
 #ifndef LAYER_DETECTIONOUTPUT_H
 #define LAYER_DETECTIONOUTPUT_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 
@@ -34,6 +34,7 @@ public:
     int nms_top_k;
     int keep_top_k;
     float confidence_threshold;
+    float variances[4];
 };
 
 } // namespace ncnn

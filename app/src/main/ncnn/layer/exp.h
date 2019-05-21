@@ -15,7 +15,7 @@
 #ifndef LAYER_EXP_H
 #define LAYER_EXP_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

@@ -15,7 +15,7 @@
 #ifndef LAYER_DEQUANTIZE_ARM_H
 #define LAYER_DEQUANTIZE_ARM_H
 
-#include "../dequantize.h"
+#include "layer/dequantize.h"
 
 namespace ncnn {
 

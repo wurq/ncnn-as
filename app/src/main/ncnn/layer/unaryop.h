@@ -15,7 +15,7 @@
 #ifndef LAYER_UNARYOP_H
 #define LAYER_UNARYOP_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 
@@ -27,6 +27,13 @@ public:
     virtual int load_param(const ParamDict& pd);
 
     virtual int forward_inplace(Mat& bottom_top_blob, const Option& opt) const;
+
+#if NCNN_VULKAN
+    virtual int create_pipeline();
+    virtual int destroy_pipeline();
+
+    virtual int forward_inplace(VkMat& bottom_top_blob, VkCompute& cmd, const Option& opt) const;
+#endif // NCNN_VULKAN
 
     enum {
         Operation_ABS   = 0,
@@ -50,6 +57,11 @@ public:
 public:
     // param
     int op_type;
+
+#if NCNN_VULKAN
+    Pipeline* pipeline_unaryop;
+    Pipeline* pipeline_unaryop_pack4;
+#endif // NCNN_VULKAN
 };
 
 } // namespace ncnn

@@ -713,4 +713,60 @@ void resize_bilinear(const Mat& src, Mat& dst, int w, int h, Allocator* allocato
     }
 }
 
+void convert_packing(const Mat& src, Mat& dst, int _packing, Allocator* allocator, int num_threads)
+{
+    ncnn::Layer* packing = ncnn::create_layer(ncnn::LayerType::Packing);
+
+    ncnn::ParamDict pd;
+    pd.set(0, _packing);
+
+    packing->load_param(pd);
+
+    ncnn::Option opt = ncnn::get_default_option();
+    opt.num_threads = num_threads;
+    opt.blob_allocator = allocator;
+
+    packing->forward(src, dst, opt);
+
+    delete packing;
+}
+
+void cast_float32_to_float16(const Mat& src, Mat& dst, Allocator* allocator, int num_threads)
+{
+    ncnn::Layer* cast = ncnn::create_layer(ncnn::LayerType::Cast);
+
+    ncnn::ParamDict pd;
+    pd.set(0, 1);
+    pd.set(1, 2);
+
+    cast->load_param(pd);
+
+    ncnn::Option opt = ncnn::get_default_option();
+    opt.num_threads = num_threads;
+    opt.blob_allocator = allocator;
+
+    cast->forward(src, dst, opt);
+
+    delete cast;
+}
+
+void cast_float16_to_float32(const Mat& src, Mat& dst, Allocator* allocator, int num_threads)
+{
+    ncnn::Layer* cast = ncnn::create_layer(ncnn::LayerType::Cast);
+
+    ncnn::ParamDict pd;
+    pd.set(0, 2);
+    pd.set(1, 1);
+
+    cast->load_param(pd);
+
+    ncnn::Option opt = ncnn::get_default_option();
+    opt.num_threads = num_threads;
+    opt.blob_allocator = allocator;
+
+    cast->forward(src, dst, opt);
+
+    delete cast;
+}
+
 } // namespace ncnn

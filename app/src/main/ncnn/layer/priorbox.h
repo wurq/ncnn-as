@@ -15,7 +15,7 @@
 #ifndef LAYER_PRIORBOX_H
 #define LAYER_PRIORBOX_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 
@@ -27,6 +27,15 @@ public:
     virtual int load_param(const ParamDict& pd);
 
     virtual int forward(const std::vector<Mat>& bottom_blobs, std::vector<Mat>& top_blobs, const Option& opt) const;
+
+#if NCNN_VULKAN
+    virtual int upload_model(VkTransfer& cmd);
+
+    virtual int create_pipeline();
+    virtual int destroy_pipeline();
+
+    virtual int forward(const std::vector<VkMat>& bottom_blobs, std::vector<VkMat>& top_blobs, VkCompute& cmd, const Option& opt) const;
+#endif // NCNN_VULKAN
 
 public:
     Mat min_sizes;
@@ -40,6 +49,14 @@ public:
     float step_width;
     float step_height;
     float offset;
+
+#if NCNN_VULKAN
+    VkMat min_sizes_gpu;
+    VkMat max_sizes_gpu;
+    VkMat aspect_ratios_gpu;
+    Pipeline* pipeline_priorbox;
+    Pipeline* pipeline_priorbox_mxnet;
+#endif // NCNN_VULKAN
 };
 
 } // namespace ncnn

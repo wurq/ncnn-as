@@ -15,7 +15,7 @@
 #ifndef LAYER_EMBED_H
 #define LAYER_EMBED_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

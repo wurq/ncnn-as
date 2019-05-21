@@ -15,7 +15,7 @@
 #ifndef LAYER_INPUT_H
 #define LAYER_INPUT_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

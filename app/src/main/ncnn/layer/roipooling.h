@@ -15,7 +15,7 @@
 #ifndef LAYER_ROIPOOLING_H
 #define LAYER_ROIPOOLING_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

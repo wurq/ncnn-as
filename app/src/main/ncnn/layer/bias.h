@@ -15,7 +15,7 @@
 #ifndef LAYER_BIAS_H
 #define LAYER_BIAS_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

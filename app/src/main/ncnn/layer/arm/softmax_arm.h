@@ -15,7 +15,7 @@
 #ifndef LAYER_SOFTMAX_ARM_H
 #define LAYER_SOFTMAX_ARM_H
 
-#include "../softmax.h"
+#include "layer/softmax.h"
 
 namespace ncnn {
 

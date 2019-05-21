@@ -15,7 +15,7 @@
 #ifndef LAYER_LSTM_H
 #define LAYER_LSTM_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

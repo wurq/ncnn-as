@@ -15,7 +15,7 @@
 #ifndef LAYER_ARGMAX_H
 #define LAYER_ARGMAX_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

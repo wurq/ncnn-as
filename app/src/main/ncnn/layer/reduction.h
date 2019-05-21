@@ -15,7 +15,7 @@
 #ifndef LAYER_REDUCTION_H
 #define LAYER_REDUCTION_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

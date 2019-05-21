@@ -15,7 +15,7 @@
 #ifndef LAYER_TILE_H
 #define LAYER_TILE_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

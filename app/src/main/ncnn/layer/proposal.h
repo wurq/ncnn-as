@@ -15,7 +15,7 @@
 #ifndef LAYER_PROPOSAL_H
 #define LAYER_PROPOSAL_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

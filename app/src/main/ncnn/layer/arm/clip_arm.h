@@ -16,6 +16,8 @@
 #define LAYER_CLIP_ARM_H
 
 #include "../clip.h"
+#include "../../mat.h"
+#include "../../layer.h"
 
 namespace ncnn {
 

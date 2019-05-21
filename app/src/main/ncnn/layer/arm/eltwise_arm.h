@@ -15,7 +15,7 @@
 #ifndef LAYER_ELTWISE_ARM_H
 #define LAYER_ELTWISE_ARM_H
 
-#include "../eltwise.h"
+#include "layer/eltwise.h"
 
 namespace ncnn {
 

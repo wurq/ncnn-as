@@ -15,7 +15,7 @@
 #ifndef LAYER_BNLL_H
 #define LAYER_BNLL_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

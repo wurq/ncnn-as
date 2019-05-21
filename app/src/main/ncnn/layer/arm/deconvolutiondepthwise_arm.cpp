@@ -14,7 +14,7 @@
 
 #include "deconvolutiondepthwise_arm.h"
 
-#include "../../layer_type.h"
+#include "layer_type.h"
 
 namespace ncnn {
 

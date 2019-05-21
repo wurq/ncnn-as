@@ -15,7 +15,7 @@
 #ifndef LAYER_CONVOLUTIONDEPTHWISE_ARM_H
 #define LAYER_CONVOLUTIONDEPTHWISE_ARM_H
 
-#include "../convolutiondepthwise.h"
+#include "layer/convolutiondepthwise.h"
 
 namespace ncnn {
 

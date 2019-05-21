@@ -15,7 +15,7 @@
 #ifndef LAYER_DEQUANTIZE_H
 #define LAYER_DEQUANTIZE_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

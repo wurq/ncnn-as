@@ -15,7 +15,7 @@
 #ifndef LAYER_RELU_ARM_H
 #define LAYER_RELU_ARM_H
 
-#include "../relu.h"
+#include "layer/relu.h"
 
 namespace ncnn {
 
@@ -23,6 +23,7 @@ class ReLU_arm : public ReLU
 {
 public:
     virtual int forward_inplace(Mat& bottom_top_blob, const Option& opt) const;
+    virtual int forward_inplace_int8(Mat& bottom_top_blob, const Option& opt) const;
 };
 
 } // namespace ncnn

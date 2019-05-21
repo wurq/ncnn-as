@@ -15,7 +15,7 @@
 #ifndef LAYER_QUANTIZE_H
 #define LAYER_QUANTIZE_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

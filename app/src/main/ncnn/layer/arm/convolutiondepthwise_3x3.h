@@ -16,11 +16,6 @@
 #include <arm_neon.h>
 #endif // __ARM_NEON
 
-//#ifdef __arm__
-//#include <arm_neon.h>
-//#endif // __ARM_NEON
-#include "../../mat.h"
-
 static void convdw3x3s1_neon(const Mat& bottom_blob, Mat& top_blob, const Mat& _kernel, const Mat& _bias, const Option& opt)
 {
     int w = bottom_blob.w;

@@ -15,7 +15,7 @@
 #ifndef LAYER_DECONVOLUTION_ARM_H
 #define LAYER_DECONVOLUTION_ARM_H
 
-#include "../deconvolution.h"
+#include "layer/deconvolution.h"
 
 namespace ncnn {
 

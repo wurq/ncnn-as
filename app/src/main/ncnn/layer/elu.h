@@ -15,7 +15,7 @@
 #ifndef LAYER_ELU_H
 #define LAYER_ELU_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

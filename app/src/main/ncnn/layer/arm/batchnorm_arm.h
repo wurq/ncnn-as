@@ -15,7 +15,7 @@
 #ifndef LAYER_BATCHNORM_ARM_H
 #define LAYER_BATCHNORM_ARM_H
 
-#include "../batchnorm.h"
+#include "layer/batchnorm.h"
 
 namespace ncnn {
 

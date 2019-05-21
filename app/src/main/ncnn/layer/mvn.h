@@ -15,7 +15,7 @@
 #ifndef LAYER_MVN_H
 #define LAYER_MVN_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 

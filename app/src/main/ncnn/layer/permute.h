@@ -15,7 +15,7 @@
 #ifndef LAYER_PERMUTE_H
 #define LAYER_PERMUTE_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 
@@ -28,8 +28,20 @@ public:
 
     virtual int forward(const Mat& bottom_blob, Mat& top_blob, const Option& opt) const;
 
+#if NCNN_VULKAN
+    virtual int create_pipeline();
+    virtual int destroy_pipeline();
+
+    virtual int forward(const VkMat& bottom_blob, VkMat& top_blob, VkCompute& cmd, const Option& opt) const;
+#endif // NCNN_VULKAN
+
 public:
     int order_type;
+
+#if NCNN_VULKAN
+    Pipeline* pipeline_permute;
+    Pipeline* pipeline_permute_pack4to1;
+#endif // NCNN_VULKAN
 };
 
 } // namespace ncnn

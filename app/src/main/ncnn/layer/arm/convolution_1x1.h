@@ -16,7 +16,6 @@
 #include <arm_neon.h>
 #endif // __ARM_NEON
 
-#include "../../mat.h"
 static void conv1x1s1_sgemm_transform_kernel_neon(const Mat& _kernel, Mat& kernel_tm, int inch, int outch)
 {
     const float* kernel = _kernel;

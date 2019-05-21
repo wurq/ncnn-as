@@ -15,7 +15,7 @@
 #ifndef LAYER_INSTANCENORM_H
 #define LAYER_INSTANCENORM_H
 
-#include "../layer.h"
+#include "layer.h"
 
 namespace ncnn {
 
