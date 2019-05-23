@@ -59,7 +59,9 @@ add_library( # Sets the name of the library.
              ${SRC_NCNN_DIR}/layer.cpp
              ${SRC_NCNN_DIR}/layer_registry.h
              ${SRC_NCNN_DIR}/benchmark.cpp
+             ${SRC_NCNN_DIR}/benchmark.h
              ${SRC_NCNN_DIR}/net.cpp
+             ${SRC_NCNN_DIR}/net.h
              ${SRC_NCNN_DIR}/paramdict.h
              ${SRC_NCNN_DIR}/opencv.h
              ${SRC_NCNN_DIR}/allocator.h
@@ -73,13 +75,19 @@ add_library( # Sets the name of the library.
              ${SRC_NCNN_DIR}/mat_pixel_resize.cpp
              ${SRC_NCNN_DIR}/benchmark.h
              ${SRC_NCNN_DIR}/cpu.cpp
+             ${SRC_NCNN_DIR}/cpu.h
+             ${SRC_NCNN_DIR}/gpu.cpp
+             ${SRC_NCNN_DIR}/gpu.h
              ${SRC_NCNN_DIR}/layer_declaration.h
             # ${SRC_NCNN_DIR}/layer_declaration.cpp
              ${SRC_NCNN_DIR}/platform.h
              ${SRC_NCNN_DIR}/opencv.cpp
+             ${SRC_NCNN_DIR}/opencv.h
              ${SRC_NCNN_DIR}/paramdict.cpp
              ${SRC_NCNN_DIR}/pipeline.cpp
              ${SRC_NCNN_DIR}/pipeline.h
+             ${SRC_NCNN_DIR}/command.cpp
+             ${SRC_NCNN_DIR}/command.h
              ${SRC_NCNN_DIR}/layer/flatten.cpp
              ${SRC_NCNN_DIR}/layer/softmax.h
              ${SRC_NCNN_DIR}/layer/squeeze.cpp
